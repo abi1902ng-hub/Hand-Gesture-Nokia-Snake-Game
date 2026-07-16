@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    background-color: #05070D;
+  }
+
+  body {
+    @apply font-body text-white antialiased;
+  }
+
+  ::selection {
+    background: rgba(52, 216, 160, 0.3);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05070D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E2E4A;
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-panel/70 backdrop-blur-xl border border-panel-border rounded-2xl shadow-panel;
+  }
+
+  .glass-card {
+    @apply bg-panel-raised/80 backdrop-blur-2xl border border-panel-border rounded-3xl shadow-panel;
+  }
+
+  .signal-border {
+    position: relative;
+  }
+  .signal-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #34D8A0 15%,
+      #2F6FED 30%,
+      transparent 45%,
+      transparent 100%
+    );
+    background-size: 300% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-travel 4s linear infinite;
+    pointer-events: none;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-display font-semibold text-void
+           bg-gradient-to-r from-signal-emerald to-signal-emerald-soft
+           shadow-glow transition-all duration-300
+           hover:shadow-[0_0_55px_-6px_rgba(52,216,160,0.55)] hover:scale-[1.02]
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-body font-medium text-white/90
+           bg-panel-raised/60 border border-panel-border backdrop-blur-md
+           transition-all duration-300
+           hover:bg-panel-raised hover:border-signal-blue/50 hover:text-white;
+  }
+
+  .btn-danger {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-body font-medium text-white/90
+           bg-panel-raised/60 border border-red-500/20 backdrop-blur-md
+           transition-all duration-300
+           hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-300;
+  }
+
+  .stat-readout {
+    @apply font-mono text-signal-emerald tracking-wide;
+  }
+}
