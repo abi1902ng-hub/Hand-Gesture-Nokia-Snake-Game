@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hand Gesture Snake Game
 
 A browser-based Snake game controlled entirely by hand gestures. Point your
@@ -81,3 +82,6 @@ thresholds live in `src/gestures/gestureConfig.ts`:
 ## License
 
 Personal / hackathon project — no license specified.
+=======
+# Hand-Gesture-Nokia-Snake-Game
+>>>>>>> 448604fc881ae3dca4675aa54f467b3659d42c4b
