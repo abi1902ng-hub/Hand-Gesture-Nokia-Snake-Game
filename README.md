@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hand Gesture Snake Game
 
 A browser-based Snake game controlled entirely by hand gestures. Point your
