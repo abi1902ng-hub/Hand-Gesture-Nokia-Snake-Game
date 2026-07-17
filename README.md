@@ -83,4 +83,3 @@ thresholds live in `src/gestures/gestureConfig.ts`:
 Personal / hackathon project — no license specified.
 =======
 # Hand-Gesture-Nokia-Snake-Game
->>>>>>> 448604fc881ae3dca4675aa54f467b3659d42c4b
